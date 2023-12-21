@@ -1,0 +1,22 @@
+{
+	"Records": [
+		{
+			"EventSource": "aws:sns",
+			"EventVersion": "1.0",
+			"EventSubscriptionArn": "arn:aws:sns:eu-west-1:012345678:CustomName_Metric_Alarms:a0000a00-a0a0-00a0-abcd-00a000aa0000",
+			"Sns": {
+				"Type": "Notification",
+				"MessageId": "a0000a00-a0a0-00a0-abcd-00a000aa0000",
+				"TopicArn": "arn:aws:sns:eu-west-1:012345678:CustomName_Metric_Alarms",
+				"Subject": "ALARM: \"TEST-FROM-CODE-ALARM\" in EU (Ireland)",
+				"Message": "{\"AlarmName\":\"TEST-FROM-CODE-ALARM\",\"AlarmDescription\":\"This is a custom message: Test with alarm from code\",\"AWSAccountId\":\"0123456789\",\"AlarmConfigurationUpdatedTimestamp\":\"2023-12-15T16:52:21.150+0000\",\"NewStateValue\":\"ALARM\",\"NewStateReason\":\"Threshold Crossed: 1 out of the last 1 datapoints [1.0 (15/12/23 15:53:00)] was greater than or equal to the threshold (1.0) (minimum 1 datapoint for OK -> ALARM transition).\",\"StateChangeTime\":\"2023-12-15T16:53:22.500+0000\",\"Region\":\"EU (Ireland)\",\"AlarmArn\":\"arn:aws:cloudwatch:eu-west-1:0123456789:alarm:TEST-FROM-CODE-ALARM\",\"OldStateValue\":\"INSUFFICIENT_DATA\",\"OKActions\":[],\"AlarmActions\":[\"arn:aws:sns:eu-west-1:0123456789:CustomName_Metric_Alarms\"],\"InsufficientDataActions\":[],\"Trigger\":{\"Period\":3600,\"EvaluationPeriods\":1,\"DatapointsToAlarm\":1,\"ComparisonOperator\":\"GreaterThanOrEqualToThreshold\",\"Threshold\":1.0,\"TreatMissingData\":\"\",\"EvaluateLowSampleCountPercentile\":\"\",\"Metrics\":[{\"Expression\":\"IF ((((operation_total)>= 1 AND (operation_total) <= 10) AND ((m2 * 100) / (operation_total)) >= 50) OR (((operation_total)> 10 AND (operation_total) <= 100) AND ((m2 * 100) / (operation_total)) >= 30) OR (((operation_total)> 100 AND (operation_total) <= 500) AND ((m2 * 100) / (operation_total)) >= 20) OR (((operation_total)> 500) AND ((m2 * 100) / (operation_total)) >= 15) , 1, 0)\",\"Id\":\"error_rate\",\"Label\":\"Total ko Error Rate\",\"ReturnData\":true},{\"Expression\":\"m1 + m2\",\"Id\":\"operation_total\",\"ReturnData\":false},{\"Id\":\"m1\",\"MetricStat\":{\"Metric\":{\"Dimensions\":[{\"value\":\"created_ok\",\"name\":\"TEST_SUCCESS\"}],\"MetricName\":\"TEST_METRIC-Entity1\",\"Namespace\":\"NAMESPACE_TEST_FROM_CODE\"},\"Period\":3600,\"Stat\":\"Sum\"},\"ReturnData\":false},{\"Id\":\"m2\",\"MetricStat\":{\"Metric\":{\"Dimensions\":[{\"value\":\"created_ko\",\"name\":\"TEST_ERROR\"}],\"MetricName\":\"TEST_METRIC-Entity1\",\"Namespace\":\"NAMESPACE_TEST_FROM_CODE\"},\"Period\":3600,\"Stat\":\"Sum\"},\"ReturnData\":false}]}}",
+				"Timestamp": "2023-12-15T16:53:22.543Z",
+				"SignatureVersion": "1",
+				"Signature": "example",
+				"SigningCertUrl": "https://sns.eu-west-1.amazonaws.com/SimpleNotificationService-0123456.pem",
+				"UnsubscribeUrl": "https://sns.eu-west-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:eu-west-1:012345678:CustomName_Metric_Alarms:a0000a00-a0a0-00a0-abcd-00a000aa0000",
+				"MessageAttributes": {}
+			}
+		}
+	]
+}
