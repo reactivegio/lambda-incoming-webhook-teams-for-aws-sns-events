@@ -2,7 +2,7 @@ import * as arnParser from "@aws-sdk/util-arn-parser"
 import { formatISO, parseJSON } from "date-fns"
 import * as log from "lambda-log"
 import { IncomingWebhook } from "ms-teams-webhook"
-import { getAlarmLink, getEmoji, getHeadingColor, isCloudwatchAlarmNotification } from "./utils.mjs"
+import { getAlarmLink, getEmoji, getHeadingLabel, isCloudwatchAlarmNotification } from "./utils.mjs"
 
 export const handler = async (event) => {
   // retrieve it from incoming webhook apps on teams
@@ -41,7 +41,7 @@ export const handler = async (event) => {
 										type: "TextBlock",
 										wrap: true,
 										size: "Large",
-										color: getHeadingColor(message.NewStateValue),
+										color: getHeadingLabel(message.NewStateValue),
 										text: `${getEmoji(message.NewStateValue)} ${
 											message.NewStateValue
 										}: ${message.AlarmName}`,
