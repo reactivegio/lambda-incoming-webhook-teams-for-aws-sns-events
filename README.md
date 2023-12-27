@@ -7,7 +7,7 @@ A lambda in nodeJs to admit aws services to notify you about activities that you
 3. configure following the instructions and save the webhook url you will need to hook later in lambda environment variables
 
 ### Create a lambda with an associated sns event 
-Create a lambda with index.mjs and message-inputs.mjs files present in this project
+Create a lambda with index.mjs and message-inputs.mjs files present in this project and hook an sns event to trigger the lambda
 
 ### Create layers -> left menu Layers
 Layers are used to load dependencies
@@ -18,3 +18,12 @@ Layers are used to load dependencies
 
 ### Hook layer
 Go to your lambda in code scroll down, hook layer created by inserting the previously copied arn
+
+### Lambda environment variables configuration:
+In tab Configurations -> environment variables create the TEAMS_WEBHOOK_URL with the url created in webhook teams
+
+### Deploy
+Click deploy button to make the lambda executable
+
+### Creates an alarm using same sns hooked to lambda
+By simply engaging the sns also configured to trigger the lambda.
