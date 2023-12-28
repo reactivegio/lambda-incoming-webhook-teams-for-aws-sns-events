@@ -25,5 +25,5 @@ In tab Configurations -> environment variables create the TEAMS_WEBHOOK_URL with
 ### Deploy
 Click deploy button to make the lambda executable
 
-### Creates an alarm using same sns hooked to lambda
+### Create an alarm using same sns hooked to lambda
 By simply engaging the sns also configured to trigger the lambda.
